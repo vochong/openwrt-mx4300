@@ -36,17 +36,14 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: Import config
-              run: mv .config_mx4300 .config
-
             - name: Update feeds
-              run: make package/symlinks
+              run:  make package/symlinks
+
+            - name: Generate config
+              run:  sh genconfig.sh
 
             - name: Build firmware images
               run: make -j$(($(nproc)+1)) download world
-
-            - name: Pack packages
-              run:  tar cvfz bin/packages.tar.gz bin/targets/qualcommax/ipq807x/packages/
 
             - name: Get SHA
               uses: benjlevesque/short-sha@v2.2
@@ -55,4 +52,4 @@ jobs:
               uses: ncipollo/release-action@v1
               with:
                 tag: qualcommax-${{ env.SHA }}
-                artifacts: bin/targets/qualcommax/ipq807x/openwrt-qualcommax-ipq807x-*, bin/packages.tar.gz
+                artifacts: bin/targets/qualcommax/ipq807x/openwrt-qualcommax-ipq807x-linksys_mx4300*
