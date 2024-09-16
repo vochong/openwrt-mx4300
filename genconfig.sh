@@ -9,6 +9,8 @@ echo CONFIG_IB=n >> .config
 echo CONFIG_TARGET_qualcommax_ipq807x_DEVICE_linksys_mx4300=y >> .config
 echo CONFIG_TARGET_DEVICE_qualcommax_ipq807x_DEVICE_linksys_mx4300=y >> .config
 echo CONFIG_TARGET_DEVICE_PACKAGES_qualcommax_ipq807x_DEVICE_linksys_mx4300=\"\" >> .config
+#add luci
+echo CONFIG_PACKAGE_luci=y >> .config
 make defconfig
 
 #add libpam
