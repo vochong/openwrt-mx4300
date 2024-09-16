@@ -10,8 +10,11 @@ echo CONFIG_TARGET_qualcommax_ipq807x_DEVICE_linksys_mx4300=y >> .config
 echo CONFIG_TARGET_DEVICE_qualcommax_ipq807x_DEVICE_linksys_mx4300=y >> .config
 echo CONFIG_TARGET_DEVICE_PACKAGES_qualcommax_ipq807x_DEVICE_linksys_mx4300=\"\" >> .config
 make defconfig
+
 #add libpam
 #echo CONFIG_PACKAGE_libpam=y >> .config
+
 #skip xdp
-cat .config | grep -v "CONFIG_PACKAGE.*xdp" > .config
+cat .config | grep -v "CONFIG_PACKAGE.*xdp" > .config.tmp
+cp .config.tmp .config
 
