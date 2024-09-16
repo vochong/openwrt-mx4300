@@ -1,4 +1,4 @@
-name: Build MX4300
+name: Build MX4300 FOSS Image
 
 on: workflow_dispatch
 
@@ -51,5 +51,5 @@ jobs:
             - name: Release
               uses: ncipollo/release-action@v1
               with:
-                tag: qualcommax-${{ env.SHA }}
+                tag: qualcommax-foss-${{ env.SHA }}
                 artifacts: bin/targets/qualcommax/ipq807x/openwrt-qualcommax-ipq807x-linksys_mx4300*
