@@ -1,4 +1,4 @@
-name: build foss 24.10.0-rc1
+name: build foss 24.10.0-rc2
 on:
   workflow_dispatch:
   workflow_call:
@@ -17,7 +17,7 @@ jobs:
         "BUILD_BRANCH": "build",
         "BUILD_INIT": "init_build.sh",
         "BUILD_TYPE":  "foss",
-        "BUILD_VER": "24.10.0-rc1",
-        "BUILD_TAG": "4171498",
+        "BUILD_VER": "24.10.0-rc2",
+        "BUILD_TAG": "66e76aa",
         "BUILD_SYNC": "y",
         "BUILD_KMOD": "y"}'        
